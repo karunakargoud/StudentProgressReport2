@@ -1,0 +1,143 @@
+﻿
+@using StudentProgressReport2.Models
+@using StudentProgressReport2.VM
+@model StudentVM
+@{
+    ViewBag.Title = "EnterNewStudent";
+}
+
+<h2>Enter New Student</h2>
+
+
+@using (Html.BeginForm("SaveStudentDetails", "Student", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <th>Student Id</th>
+            <td>@Html.TextBoxFor(m => m.student.StudentId)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.StudentId)</td>
+        </tr>
+        <tr>
+            <th>Student Name</th>
+            <td>@Html.TextBoxFor(m => m.student.StudentName)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.StudentName)</td>
+        </tr>
+        <tr>
+            <th>Standard</th>
+            <td>@Html.TextBoxFor(m => m.student.Class)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.Class)</td>
+        </tr>
+        <tr>
+            <th>Name of the Exam</th>
+            <td>@Html.TextBoxFor(m => m.student.NameOfTheExam)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.NameOfTheExam)</td>
+        </tr>
+        <tr>
+            <th>Telugu</th>
+            <td>@Html.TextBoxFor(m => m.student.Telugu)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.Telugu)</td>
+        </tr>
+        <tr>
+            <th>Hindi</th>
+            <td>@Html.TextBoxFor(m => m.student.Hindi)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.Hindi)</td>
+        </tr>
+        <tr>
+            <th>English</th>
+            <td>@Html.TextBoxFor(m => m.student.English)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.English)</td>
+        </tr>
+        <tr>
+            <th>Mathematics</th>
+            <td>@Html.TextBoxFor(m => m.student.Maths)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.Maths)</td>
+        </tr>
+
+        <tr>
+            <th>Science</th>
+            <td>@Html.TextBoxFor(m => m.student.Science)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.Science)</td>
+        </tr>
+        <tr>
+            <th>Social</th>
+            <td>@Html.TextBoxFor(m => m.student.Social)</td>
+            <td>@Html.ValidationMessageFor(m => m.student.Social)</td>
+        </tr>
+          
+        <tr>
+            <td>
+                <input type="reset"
+                       value="Clear" />
+            </td>
+            <td>
+                <input type="submit"
+                       value="Enter New Student Details" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.ValidationSummary()
+            </td>
+        </tr>
+
+    </table>
+
+}
+<h2>Student Details</h2>
+<table>
+    <tr>
+        <th>Student Name</th>
+        <td>@Model.student.StudentName</td>
+    </tr>
+    <tr>
+        <th>Standard</th>
+        <td>@Model.student.Class</td>
+    </tr>
+    <tr>
+        <th>Name of the Exam</th>
+        <td>@Model.student.NameOfTheExam</td>
+    </tr>
+    <tr>
+        <th>Telugu</th>
+      
+        <td style="background-color:@Model.ColorName">@Model.student.Telugu</td>
+    </tr>
+    <tr>
+        <th>Hindi</th>
+        <td style="background-color:@Model.ColorName">@Model.student.Hindi</td>
+
+    </tr>
+    <tr>
+        <th>English</th>
+        <td style="background-color:@Model.ColorName">@Model.student.English</td>
+    </tr>
+    <tr>
+        <th>Mathematics</th>
+        <td style="background-color:@Model.ColorName">@Model.student.Maths</td>
+    </tr>
+    <tr>
+        <th>Science</th>
+        <td style="background-color:@Model.ColorName">@Model.student.Science</td>
+    </tr>
+    <tr>
+        <th>Social</th>
+        <td style="background-color:@Model.ColorName">@Model.student.Social</td>
+    </tr>
+
+    <tr>
+        <th>Total</th>
+        <td>@Model.Total</td>
+    </tr>
+    <tr>
+        <th>Result</th>
+        <td style="background-color:@Model.ColorName">@Model.Result</td>
+    </tr>
+    <tr>
+        <th>Grade</th>
+        <td>@Model.Grade</td>
+    </tr>
+    <tr>
+        <th>Average</th>
+        <td>@Model.Average</td>
+    </tr>
+</table>
